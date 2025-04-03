@@ -1,0 +1,89 @@
+:root {
+    --gap: 20px;
+}
+
+body {
+    margin: 0px;
+}
+
+@keyframes pan {
+    0% {
+        background-position: 0px 0%;
+    }
+
+    100% {
+        background-position: 2000px 0%;
+    }
+}
+
+div.background {
+    background: rgb(114, 9, 183);
+    background: linear-gradient(90deg, rgba(114, 9, 183, 1) 0%, rgba(42, 13, 174, 1) 50%, rgba(114, 9, 183, 1) 100%);
+    background-size: 2000px 2000px;
+    width: 100vw;
+    height: 100vh;
+    animation: pan 30s linear infinite;
+}
+
+div.main {
+    padding: var(--gap);
+    display: grid;
+    width: calc(100vw - 2 * var(--gap));
+    height: calc(100vh - 2 * var(--gap));
+    gap: var(--gap);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+div.container {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+div.links {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+
+    .item {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        border-radius: 20px;
+
+        background: rgba(0, 0, 0, 0.05);
+        margin: 5px;
+
+        transition: 0.4s linear;
+
+        img {
+            height: 50px;
+        }
+
+        p {
+            font-family: 'Nunito', 'Courier New', Courier, monospace;
+            color: hsl(0, 0%, 80%);
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+            text-decoration: none;
+            position: absolute;
+            bottom: 10px;
+        }
+    }
+
+    .item:hover {
+        background: rgba(0, 0, 0, 0.2);
+    }
+}
