@@ -33,9 +33,9 @@ div.main-grid {
     height: 100vh;
     gap: var(--gap);
     grid-template-areas:
-        "links dice temp1"
-        "links temp temp"
-        "links temp temp";
+        "links dice temp"
+        "links calculator calculator"
+        "links calculator calculator";
     grid-template-columns: 4fr 3fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
 }
@@ -151,4 +151,41 @@ div.dice-container {
     input:hover {
         background: hsla(195, 83%, 23%, 0.8);
     }
+}
+
+div.calculator-container {
+    grid-area: calculator;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr;
+    place-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+
+    div.calculator-result {
+        background: rgba(0, 0, 0, 1);
+        border-radius: 20px;
+        padding: 10px 20px 10px 0px;
+        width: 100%;
+        box-sizing: border-box;
+
+        p {
+            font-family: 'Nunito', 'Courier New', Courier, monospace;
+            text-align: right;
+        }
+
+        p.previous-answer {
+            font-size: 20px;
+            font-weight: normal;
+        }
+
+        p.answer {
+            font-size: 50px;
+        }
+    }
+
+    /* div.calculator-buttons {
+        gap: 0px;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+    } */
 }

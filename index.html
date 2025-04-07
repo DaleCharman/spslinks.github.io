@@ -7,7 +7,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
             rel="stylesheet"
         />
 
@@ -43,11 +43,20 @@
                 </div>
                 <div class="container grid dice-container">
                     <p>10</p>
-                    <input type="button" value="Roll">
-                    <div style="grid-area: empty;"></div>
-                    <div style="grid-area: empty1;"></div>
+                    <input type="button" value="Roll" />
+                    <div style="grid-area: empty"></div>
+                    <div style="grid-area: empty1"></div>
                 </div>
-                <div class="container" style="grid-area: temp"></div>
+                <div class="container grid calculator-container">
+                    <div class="calculator-result">
+                        <p class="previous-answer">
+                            Ans = <span class="previous-answer-value">4i + 7</span>
+                        </p>
+                        <p class="answer answer-value">3.14</p>
+                    </div>
+                    <div class="container grid calculator-buttons"><p>coming soon</p></div>
+                </div>
+                <div class="container" style="grid-area: temp"><p>what do i put here</p></div>
             </div>
         </div>
         <script type="text/javascript" src="dice/dice.js"></script>
@@ -101,7 +110,6 @@
 
             let body = document.querySelector('body');
             let linkContainer = document.querySelector('.link-container');
-            let diceContainer = document.querySelector('.dice-container');
             let gridTemplate = estimateGridTemplate(links.length);
 
             function updateScreen() {
@@ -127,13 +135,16 @@
                 linkContainer.appendChild(item);
             }
 
+            let diceContainer = document.querySelector('.dice-container');
             let dice1 = createDice(diceContainer);
             let dice2 = createDice(diceContainer);
             dice1.style.gridArea = 'dice1';
             dice2.style.gridArea = 'dice2';
             let total;
             let totalDiceElement = document.querySelector('.dice-container p');
-            let rollDiceElement = document.querySelector('.dice-container input');
+            let rollDiceElement = document.querySelector(
+                '.dice-container input'
+            );
 
             total = 0;
             total += switchDiceRandom(dice1);
