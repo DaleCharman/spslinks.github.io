@@ -25,21 +25,26 @@ div.background {
     animation: pan 30s linear infinite;
 }
 
-div.main {
+div.main-grid {
     padding: var(--gap);
     display: grid;
-    width: calc(100vw - 2 * var(--gap));
-    height: calc(100vh - 2 * var(--gap));
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
     gap: var(--gap);
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-areas:
+        "links dice temp1"
+        "links temp temp"
+        "links temp temp";
+    grid-template-columns: 4fr 3fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
 }
 
 div.container {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.2);
-    border-radius: 40px;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,7 +52,14 @@ div.container {
     flex-direction: column;
 }
 
-div.links {
+div.grid {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    gap: var(--gap);
+}
+
+div.link-container {
     width: 100%;
     height: 100%;
     display: grid;
@@ -79,11 +91,43 @@ div.links {
             margin: 0;
             text-decoration: none;
             position: absolute;
-            bottom: 10px;
         }
+    }
+
+    .item:has(img) p {
+        bottom: 10px;
     }
 
     .item:hover {
         background: rgba(0, 0, 0, 0.2);
+        transform: scale(1.05, 1.05);
+
+        p {
+            text-decoration: none;
+        }
+    }
+}
+
+p {
+    font-family: 'Nunito', 'Courier New', Courier, monospace;
+    color: hsl(0, 0%, 80%);
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    text-decoration: none;
+}
+
+div.dice-container {
+    grid-area: dice;
+    grid-template-areas:
+        'dice1 dice2 total'
+        'dice1 dice2 roll';
+    grid-template-columns: 3fr 3fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    place-items: center;
+
+    p {
+        grid-area: total;
+        font-size: 50px;
     }
 }
