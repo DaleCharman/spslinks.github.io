@@ -120,14 +120,35 @@ p {
 div.dice-container {
     grid-area: dice;
     grid-template-areas:
+        'dice1 dice2 empty'
         'dice1 dice2 total'
-        'dice1 dice2 roll';
+        'dice1 dice2 roll'
+        'dice1 dice2 empty1';
     grid-template-columns: 3fr 3fr 2fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 2fr 2fr 1fr;
     place-items: center;
+    gap: 0px;
 
     p {
         grid-area: total;
         font-size: 50px;
+    }
+
+    input {
+        grid-area: roll;
+        font-family: 'Nunito', 'Courier New', Courier, monospace;
+        background: hsla(195, 82%, 30%, 0.8);
+        border: none;
+        border-radius: 8px;
+        color: hsl(0, 0%, 80%);
+        font-size: 30px;
+        font-weight: bold;
+        padding: 20px;
+        text-decoration: none;
+        transition: 0.1s linear;
+    }
+
+    input:hover {
+        background: hsla(195, 83%, 23%, 0.8);
     }
 }

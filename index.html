@@ -43,7 +43,9 @@
                 </div>
                 <div class="container grid dice-container">
                     <p>10</p>
-                    <p style="grid-area: roll">10</p>
+                    <input type="button" value="Roll">
+                    <div style="grid-area: empty;"></div>
+                    <div style="grid-area: empty1;"></div>
                 </div>
                 <div class="container" style="grid-area: temp"></div>
             </div>
@@ -131,13 +133,14 @@
             dice2.style.gridArea = 'dice2';
             let total;
             let totalDiceElement = document.querySelector('.dice-container p');
+            let rollDiceElement = document.querySelector('.dice-container input');
 
             total = 0;
             total += switchDiceRandom(dice1);
             total += switchDiceRandom(dice2);
             totalDiceElement.innerHTML = total;
 
-            diceContainer.onclick = () => {
+            rollDiceElement.onclick = () => {
                 total = 0;
                 total += switchDiceRandom(dice1);
                 total += switchDiceRandom(dice2);
