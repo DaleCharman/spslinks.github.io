@@ -80,7 +80,6 @@ div.link-container {
         transition: 0.4s linear;
 
         img {
-
             height: 50px;
         }
 
@@ -89,15 +88,15 @@ div.link-container {
             color: hsl(0, 0%, 80%);
             font-size: 20px;
             font-weight: bold;
-            margin: 0;
-            text-decoration: none;
-            position: absolute;
+            margin: 5px;
+            box-sizing: border-box;
+            text-decoration: none !important;
         }
     }
 
-    .item:has(img) p {
+    /* .item:has(img) p {
         bottom: 10px;
-    }
+    } */
 
     .item:hover {
         background: rgba(0, 0, 0, 0.2);

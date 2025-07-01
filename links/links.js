@@ -75,6 +75,26 @@ let links = [
         logo: 'https://foldr.com/media/2023/05/cropped-Foldr-Icon-Main.png',
     },
     {
+        name: 'Maths Hub',
+        link: 'https://sites.google.com/stpaulsschool.org.uk/team/home',
+        logo: 'https://www.stpaulsschool.org.uk/wp-content/uploads/2019/05/St-Pauls-Logo-300x300.png',
+    },
+    {
+        name: 'History Hub',
+        link: 'https://sites.google.com/stpaulsschool.org.uk/historyhub/home',
+        logo: 'https://www.stpaulsschool.org.uk/wp-content/uploads/2019/05/St-Pauls-Logo-300x300.png',
+    },
+    {
+        name: 'Book Blog',
+        link: 'https://sps-bookblog.blogspot.com',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Blogger_icon_2017.svg/1024px-Blogger_icon_2017.svg.png'
+    },
+    {
+        name: 'Placeholder',
+        link: 'https://dalecharman.github.io/',
+        logo: 'https://external-preview.redd.it/youtube-dale-charman-travels-part-1-london-underground-full-v0-95z6YumopKViJMw9Y6RmkNRZwUFSNmo0xJKrCkrWS7I.jpg?format=pjpg&auto=webp&s=a4393ca52796ae88e3a97e2be893e8ca16be3b79'
+    },
+    {
         name: 'Feedback',
         link: 'https://forms.gle/rQR9btgXVkg6itiy8',
         logo: '',
